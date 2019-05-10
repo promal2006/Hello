@@ -1,5 +1,5 @@
 resources:
-  - name: hello-repo
+  - name: repo
     type: git
     source:
       branch: master
@@ -8,8 +8,8 @@ resources:
 jobs:
   - name: test
     plan:
-      - get: hello-repo
+      - get: repo
         trigger: true
       - aggregate:
           - task: java-test
-            file: hello-repo/ci/task/java_test.yml
+            file: repo/ci/task/java_test.yml

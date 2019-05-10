@@ -7,10 +7,10 @@ image_resource:
     repository: maven
 
 inputs:
-  - name: hello-repo
+  - name: repo
 
 run:
-  path: hello-repo/ci/task/java_test.sh
+  path: repo/ci/task/java_test.sh
 
 caches:
   - path: .m2/repository

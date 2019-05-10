@@ -9,9 +9,9 @@ set -e -u -x
 export TERM=-dumb
 
 #export GRADLE_OPTS=-Dorg.gradle.native=false
-export PATH=$PATH:$PWD/hello-repo
+export PATH=$PATH:$PWD/repo
 
-pushd hello-repo
+pushd repo
 
 mvn test -Dmaven.repo.local=../.m2/repository
 
