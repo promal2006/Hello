@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #--- set script options
 #    e - exit with non-zero error if any command fails
