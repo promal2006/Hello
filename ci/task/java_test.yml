@@ -10,7 +10,7 @@ inputs:
   - name: hello-repo
 
 run:
-  path: hello-repo/task/java_test.sh
+  path: hello-repo/ci/task/java_test.sh
 
 caches:
   - path: .m2/repository
