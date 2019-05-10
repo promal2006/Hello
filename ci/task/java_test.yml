@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: maven
+
+inputs:
+  - name: hello-repo
+
+run:
+  path: hello-repo/task/java_test.sh
+
+caches:
+  - path: .m2/repository

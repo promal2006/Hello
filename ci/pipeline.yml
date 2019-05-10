@@ -1,0 +1,15 @@
+resources:
+  - name: hello-repo
+    type: git
+    source:
+      branch: master
+      url: https://github.com/promal2006/hello-world.git
+
+jobs:
+  - name: test
+    plan:
+      - get: hello-repo
+        trigger: true
+      - aggregate:
+          - task: java-test
+            file: hello-repo/ci/task/java_test.yml
