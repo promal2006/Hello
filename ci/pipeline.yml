@@ -9,6 +9,7 @@ jobs:
   - name: test
     plan:
       - get: repo
+        resource: repo
         trigger: true
       - aggregate:
           - task: java-test
