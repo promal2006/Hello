@@ -3,7 +3,7 @@ resources:
     type: git
     source:
       branch: master
-      url: https://github.com/promal2006/hello-world.git
+      url: https://github.com/promal2006/Hello.git
 
 jobs:
   - name: test
