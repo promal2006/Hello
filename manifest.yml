@@ -1,0 +1,12 @@
+---
+applications:
+  - name: Hello
+    memory: 1G
+    disk_quota: 512M
+    instances: 1
+    path: hello-acceptance.jar
+    stack: cflinuxfs3
+    buildpacks:
+      - java_buildpack_offline
+    routes:
+      - route: hello.apps.sys.evans.pal.pivotal.io
