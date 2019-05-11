@@ -19,7 +19,7 @@ resources:
       password: {{cf-password}}
       organization: {{cf-organization}}
       space: {{cf-space}}
-      skip_cert_check: {{cf-skip-cert-check}}
+      skip_cert_check: true
 
 jobs:
   - name: test
