@@ -19,7 +19,7 @@ mvn clean package -Dmaven.repo.local=../.m2/repository
 popd
 
 #--- copy target to artifacts directory
-cp -R repo/target/hello-*-SNAPSHOT.jar artifacts/hello-acceptance.jar
+cp -R repo/target/Hello-1.0-SNAPSHOT.jar artifacts/hello-acceptance.jar
 
 #--- copy yaml to artifacts directory
 cp repo/manifest.yml artifacts/
