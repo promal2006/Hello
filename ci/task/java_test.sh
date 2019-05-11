@@ -6,7 +6,7 @@
 #    x - print command before running them (trace)
 set -e -u -x
 
-export TERM=dumb
+export TERM=-dumb
 
 #export GRADLE_OPTS=-Dorg.gradle.native=false
 export PATH=$PATH:$PWD/repo
