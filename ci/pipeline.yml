@@ -1,9 +1,25 @@
+groups:
+  - name: develop
+    jobs:
+      - test
+      - deploy
+
 resources:
   - name: repo
     type: git
     source:
       branch: master
       uri: https://github.com/promal2006/((repo_name)).git
+
+  - name: pcf
+    type: cf
+    source:
+      api: {{cf-api-url}}
+      username: {{cf-username}}
+      password: {{cf-password}}
+      organization: {{cf-organization}}
+      space: {{cf-space}}
+      skip_cert_check: {{cf-skip-cert-check}}
 
 jobs:
   - name: test
@@ -13,3 +29,14 @@ jobs:
       - aggregate:
           - task: java-test
             file: repo/ci/task/java_test.yml
+
+  - name: deploy
+    plan:
+      - get: repo
+        trigger: true
+        passed: [test]
+      - task: build
+        file: repo/ci/task/build.yml
+      - put: pcf
+        params:
+          manifest: artifacts/manifest.yml
